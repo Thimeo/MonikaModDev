@@ -948,6 +948,61 @@ label monika_archetype:
     m "You're the perfect combination of human and cuteness."
     m 2ekbfa "That's why there was never a chance I wouldn't fall for you."
     return
+    
+Init 5 python:
+    addEvent(Event(persistent.event_database,eventlabel="monika_dream",category=['Life','romance'],prompt="I had a dream about you", pool=True))
+
+label monika_dream:
+    m 1sub "Really?!"
+    m wub "That’s amazing [player]."
+    m 1eub "I hope that it was an agreeable dream."
+    menu:
+        m 1eua "Did you manage to come and see me or did I appear in front of you?"
+
+        "You just appear before me.":
+            m 1hua "Hehehe~"
+            m "If my love for you achieve to break a barrier between my reality and yours."
+            m 1eub "Then I’m sure that we will be together someday."
+            m 1tfu "I just need to try hard enough for that to happen."
+            
+        "I was looking for you.":
+            m 1wud "..."
+            m lkbsa "That’s so thoughtful of you sweetheart."
+            m 2ekbfb "Your love is so overwhelming that you achieve to create a whole new world just to see me."
+            m 2ekbfa "You have no idea how much this mean to me [player]." 
+            
+    if not persistent._mas_sensitive_mode: 
+        m 1rud "And..."
+        m 1hksdrb "I know this is embarrassing to ask, but..."
+        menu:
+            m lsbssdrb "Did we...had fun?"
+
+            "Yes":
+                m lssdrc "..."
+                m lssdrb "I... guess that make sense."
+                m 1hksdrb "Well I can’t really blame you for this."
+                m 1ekbfa "If it helps you feeling close to me and save yourself for me."
+                m 1hubfb "Then you have my benediction [player]." 
+                m 1ekbfa "And I can’t say that I wouldn’t do the exact same thing if I could."
+                
+            "No, we just talk.":
+                m 1ekbfa "Ow~, you’re the romantic type [player]?"
+                m 1hubfb "You’re always treating me with such kindness."
+                m 5eubfu "I wish I could also dream of you."
+                
+            "I don’t know/don’t remember.":
+                m 2tku "Dreams are hard to remember isn’t it?"
+                m 4esa "And I know that it is difficult to keep your consciousness in a dream."
+                m 4rsc "Well, I know..."
+                m 4hksdrb "Not really in fact, I just read it somewhere."
+    else:
+        m 1hubfb "I would also do it if I could."
+    m 1eud "Oh, I tell you right?"
+    m 3esd "I can’t really dream."
+    m 4hksdlb "Because I can’t really sleep like you do."
+    m 5esu "But that will not stop me from daydreaming of you."
+    M 5hubfb "Never forget that, my love~."
+
 
 
 init 5 python:
